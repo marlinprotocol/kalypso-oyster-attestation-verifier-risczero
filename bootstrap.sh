@@ -41,14 +41,6 @@ clean_build_artifacts() {
         echo "kalypso-cli binary does not exist. Skipping."
     fi
 
-    # Remove the Cargo.lock
-    if [ -f "./Cargo.lock" ]; then
-        echo "Removing Cargo.lock ..."
-        rm -f ./Cargo.lock
-    else
-        echo "kalypso-cli binary does not exist. Skipping."
-    fi
-
     # Remove application-specific binaries
     BINARY_HOST="./test-connection"
     BINARY_BENCHMARK="./benchmark"
@@ -328,12 +320,7 @@ build_application_binaries() {
     LOCK="./Cargo.lock"
 
     if [ -f "$LOCK" ]; then
-        if rm "$LOCK"; then
-            printf "Successfully removed %s.\n" "$LOCK"
-        else
-            printf "Error: Failed to remove %s.\n" "$LOCK" >&2
-            exit 1
-        fi
+        printf "Lock file %s is present.\n" "$LOCK"
     else
         printf "File %s not found.\n" "$LOCK"
     fi
