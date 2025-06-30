@@ -31,7 +31,6 @@ async fn main() -> std::io::Result<()> {
         .or_else(|_| std::env::var("RPC_URL"))
         .expect("HTTP_RPC_URL or RPC_URL is not set");
 
-
     let mut handles = vec![];
 
     let handle_1 = tokio::spawn(async move {
