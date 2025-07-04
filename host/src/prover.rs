@@ -43,6 +43,11 @@ async fn main() -> std::io::Result<()> {
             max_parallel_proofs.clone()
         );
 
+        let block_range: i32 = std::env::var("BLOCK_RANGE")
+            .ok()
+            .and_then(|v| v.parse::<i32>().ok())
+            .unwrap_or(9999);
+
         let listener =
             kalypso_listener::job_creator::JobCreator::simple_listener_for_non_confidential_prover(
                 generator,
@@ -60,6 +65,7 @@ async fn main() -> std::io::Result<()> {
                 false,
                 9999,
                 polling_interval.parse()?,
+                block_range,
             );
 
         listener.run().await

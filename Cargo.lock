@@ -2346,7 +2346,7 @@ dependencies = [
 [[package]]
 name = "foundry-contracts"
 version = "0.1.0"
-source = "git+https://github.com/marlinprotocol/kalypso-unified.git?branch=mainnet#530fcb7f9f8bac9eb0dcf734dc0de0e80b1cf92f"
+source = "git+https://github.com/marlinprotocol/kalypso-unified.git?branch=manual_gas_calculation_on_submit_proof#ec952aca3eb34da121f72758237700e34f219b27"
 dependencies = [
  "ethers",
  "serde",
@@ -2489,7 +2489,7 @@ dependencies = [
 [[package]]
 name = "generator"
 version = "0.1.0"
-source = "git+https://github.com/marlinprotocol/kalypso-unified.git?branch=mainnet#530fcb7f9f8bac9eb0dcf734dc0de0e80b1cf92f"
+source = "git+https://github.com/marlinprotocol/kalypso-unified.git?branch=manual_gas_calculation_on_submit_proof#ec952aca3eb34da121f72758237700e34f219b27"
 dependencies = [
  "actix-web",
  "async-trait",
@@ -2723,7 +2723,7 @@ checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
 [[package]]
 name = "helper"
 version = "0.1.0"
-source = "git+https://github.com/marlinprotocol/kalypso-unified.git?branch=mainnet#530fcb7f9f8bac9eb0dcf734dc0de0e80b1cf92f"
+source = "git+https://github.com/marlinprotocol/kalypso-unified.git?branch=manual_gas_calculation_on_submit_proof#ec952aca3eb34da121f72758237700e34f219b27"
 dependencies = [
  "actix-extensible-rate-limit",
  "actix-web",
@@ -3399,7 +3399,7 @@ checksum = "d75a2a4b1b190afb6f5425f10f6a8f959d2ea0b9c2b1d79553551850539e4674"
 [[package]]
 name = "ivs"
 version = "0.1.0"
-source = "git+https://github.com/marlinprotocol/kalypso-unified.git?branch=mainnet#530fcb7f9f8bac9eb0dcf734dc0de0e80b1cf92f"
+source = "git+https://github.com/marlinprotocol/kalypso-unified.git?branch=manual_gas_calculation_on_submit_proof#ec952aca3eb34da121f72758237700e34f219b27"
 dependencies = [
  "actix-web",
  "async-trait",
@@ -3615,10 +3615,11 @@ checksum = "d26c52dbd32dccf2d10cac7725f8eae5296885fb5703b261f7d0a0739ec807ab"
 [[package]]
 name = "listener"
 version = "0.1.0"
-source = "git+https://github.com/marlinprotocol/kalypso-unified.git?branch=mainnet#530fcb7f9f8bac9eb0dcf734dc0de0e80b1cf92f"
+source = "git+https://github.com/marlinprotocol/kalypso-unified.git?branch=manual_gas_calculation_on_submit_proof#ec952aca3eb34da121f72758237700e34f219b27"
 dependencies = [
  "actix-web",
  "anyhow",
+ "dotenv",
  "ecies",
  "env_logger 0.10.2",
  "ethers",
@@ -3718,7 +3719,7 @@ dependencies = [
 [[package]]
 name = "matching_engine"
 version = "0.1.0"
-source = "git+https://github.com/marlinprotocol/kalypso-unified.git?branch=mainnet#530fcb7f9f8bac9eb0dcf734dc0de0e80b1cf92f"
+source = "git+https://github.com/marlinprotocol/kalypso-unified.git?branch=manual_gas_calculation_on_submit_proof#ec952aca3eb34da121f72758237700e34f219b27"
 dependencies = [
  "actix-web",
  "anyhow",

@@ -31,9 +31,9 @@ ethers ={version = "2.0.10", features = ["abigen", "ws", "rustls"] }
 dotenv = "0.15"
 env_logger = "0.10"
 tokio = { version = "1", features = ["full"] }
-kalypso_listener = { git = "https://github.com/marlinprotocol/kalypso-unified.git", branch = "mainnet", package = "listener", features = ["testnet"] }
-kalypso_helper = { git = "https://github.com/marlinprotocol/kalypso-unified.git", branch = "mainnet", package = "helper" }
-kalypso_generator_models = { git = "https://github.com/marlinprotocol/kalypso-unified.git", branch = "mainnet", package = "generator" }
+kalypso_listener = { git = "https://github.com/marlinprotocol/kalypso-unified.git", branch = "manual_gas_calculation_on_submit_proof", package = "listener", features = ["testnet"] }
+kalypso_helper = { git = "https://github.com/marlinprotocol/kalypso-unified.git", branch = "manual_gas_calculation_on_submit_proof", package = "helper" }
+kalypso_generator_models = { git = "https://github.com/marlinprotocol/kalypso-unified.git", branch = "manual_gas_calculation_on_submit_proof", package = "generator" }
 
 [features]
 default = []
