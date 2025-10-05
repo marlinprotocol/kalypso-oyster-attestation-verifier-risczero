@@ -45,8 +45,9 @@ fn main() {
     // 0x310fe598
     // 0x50bd1769
     // 0xc101b42b
+    // 0x73c457ba
 
-    let seal_with_prefix: Vec<u8> = vec![0xc1, 0x01, 0xb4, 0x2b]
+    let seal_with_prefix: Vec<u8> = vec![0x73, 0xc4, 0x57, 0xba]
         .into_iter()
         .chain(receipt.inner.groth16().unwrap().seal.clone())
         .collect();
