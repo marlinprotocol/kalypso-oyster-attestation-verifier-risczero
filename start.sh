@@ -84,16 +84,17 @@ fi
 OPERATION="$1"
 
 # Export necessary environment variables
-export CHAIN_ID="421614"
-export PROOF_MARKETPLACE_ADDRESS="0xC05d689B341d84900f0d0CE36f35aDAbfB57F68d"
-export GENERATOR_REGISTRY_ADDRESS="0x4743a2c7a96C9FBED8b7eAD980aD01822F9711Db"
-export ENTITY_KEY_REGISTRY_ADDRESS="0x457D42573096b339bA48Be576e9Db4Fc5F186091"
-export START_BLOCK="115108807"
+export CHAIN_ID="42161"
+export PROOF_MARKETPLACE_ADDRESS="0xE68A7457c0fd11CcBe96126Bf69B27a9064636a2"
+export GENERATOR_REGISTRY_ADDRESS="0xEcF45b1272D3B0ed2eB2A3c85b1E4bBa8a3611D6"
+export ENTITY_KEY_REGISTRY_ADDRESS="0x9C0Da9ac6B563A87CAf6F5b49f58f3C6D8D9BDef"
+export START_BLOCK="384000000"
 export MARKET_ID="1"
-export INDEXER_URL="https://kalypso-beta.justfortesting.me"
+export INDEXER_URL="https://indexer.kalypso.org"
 
-export STAKING_TOKEN="0xB5570D4D39dD20F61dEf7C0d6846790360b89a18"
-export PAYMENT_TOKEN="0x8230d71d809718132C2054704F5E3aF1b86B669C"
+export STAKING_TOKEN="0xdA0a57B710768ae17941a9Fa33f8B720c8bD9ddD"
+export PAYMENT_TOKEN="0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+export NATIVE_STAKING_ADDRESS="0xd96418F0507F992E2a33942e54FA832ba3d2287e"
 
 # Execute based on the selected operation
 case "$OPERATION" in
@@ -157,7 +158,8 @@ case "$OPERATION" in
   test-connection)
     echo "Testing network connection..."
     # Add your connection test commands below
-    ./test-connection --url "http://3.110.146.109:1500/attestation/raw" &
+    # ./test-connection --url "http://3.110.146.109:1500/attestation/raw" &
+    ./test-connection --url "https://attestation.ivs.nitro.kalypso.org/attestation/raw" &
     HOST_PID=$!
     wait "$HOST_PID"
     ;;
@@ -178,9 +180,9 @@ case "$OPERATION" in
   
   symbiotic-stake)
     echo "Starting symbiotic stake request..."
-    export SYMBIOTIC_CHAIN_ID="17000"
-    export VAULT_OPT_IN_SERVICE="0x95CC0a052ae33941877c9619835A233D21D57351"
-    export NETWORK_OPT_IN_SERVICE="0x58973d16FFA900D11fC22e5e2B6840d9f7e13401"
+    export SYMBIOTIC_CHAIN_ID="1"
+    export VAULT_OPT_IN_SERVICE="0xb361894bC06cbBA7Ea8098BF0e32EB1906A5F891"
+    export NETWORK_OPT_IN_SERVICE="0x7133415b33B438843D581013f98A08704316633c"
     
     OPERATION_NAME="Request Symbiotic Stake" ./kalypso-cli &
     SYM_PID=$!
@@ -190,7 +192,6 @@ case "$OPERATION" in
 
   native-stake)
     echo "Native Staking"
-    export NATIVE_STAKING_ADDRESS="0x5F1666aEB646439157e139FF37637302168e6bb9"
 
     OPERATION_NAME="Native Stake" ./kalypso-cli &
     NAT_PID=$!
@@ -219,8 +220,8 @@ case "$OPERATION" in
   symbiotic-register)
     echo "Register Operator with symbiotic"
 
-    export SYMBIOTIC_CHAIN_ID="17000"
-    export SYMBIOTIC_OPERATOR_REGISTRY="0x6F75a4ffF97326A00e52662d82EA4FdE86a2C548"
+    export SYMBIOTIC_CHAIN_ID="1"
+    export SYMBIOTIC_OPERATOR_REGISTRY="0xAd817a6Bc954F678451A71363f04150FDD81Af9F"
 
     OPERATION_NAME="Symbiotic Operator Register" ./kalypso-cli &
     S_ID=$!

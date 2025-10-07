@@ -281,8 +281,8 @@ install_kalypso_cli() {
 
         cd "$TEMP_DIR"
 
-        echo "Checking out the beta branch..."
-        git checkout beta
+        echo "Checking out the mainnet branch..."
+        git checkout mainnet
 
         echo "Removing .cargo directory in kalypso-unified..."
         rm -rf .cargo
